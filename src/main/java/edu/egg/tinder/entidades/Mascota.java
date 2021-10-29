@@ -9,10 +9,12 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+
 @Data
 @Entity
 public class Mascota {
@@ -28,6 +30,9 @@ public class Mascota {
     
     @ManyToOne
     private Usuario usuario;
+    
+    @OneToOne
+    private Foto foto;
     
     @Enumerated(EnumType.STRING)
     private Sexo sexo;
